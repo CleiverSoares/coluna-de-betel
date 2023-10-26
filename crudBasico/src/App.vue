@@ -1,17 +1,16 @@
 
 <template>
-  <NavBar teste="twwww"/>
   <div class="main-container">
+    <NavBar/>
     <RouterView />
   </div>
 </template>
 <script>
 import NavBar from '../src/components/Nav-Bar.vue'
-import HelloWorld from './views/HelloWorld.vue'
 
 export default {
     name: 'App',
-    components: { HelloWorld,NavBar }
+    components: { NavBar }
 }
 </script>
 <style>
@@ -32,6 +31,5 @@ export default {
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0 16px;
 }
 </style>
