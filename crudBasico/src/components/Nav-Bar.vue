@@ -4,7 +4,7 @@
             <img class="img-logo-alterdata" src="../assets/img/logo-alterdata.png" alt="Foto da logo da alterdata">
         </div>
         <div class="menu">
-            <router-link to="/Cadastrar" class="font-menu">Cadastrar</router-link> 
+            <router-link to="/cadastrar" class="font-menu">Cadastrar</router-link> 
             <router-link to="/Visualizar" class="font-menu">Visualizar</router-link> 
             <router-link to="/Visualizar todos" class="font-menu">Visualizar todos</router-link> 
         </div>

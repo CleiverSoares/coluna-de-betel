@@ -7,10 +7,11 @@
 </template>
 <script>
 import NavBar from '../src/components/Nav-Bar.vue'
+import Cadastrar from'./views/Cadastrar.vue'
 
 export default {
     name: 'App',
-    components: { NavBar }
+    components: { NavBar,Cadastrar }
 }
 </script>
 <style>

@@ -1,14 +1,15 @@
 
 
-import { createRouter, createWebHistory } from 'vue-router'
-import HelloWorld from '../views/HelloWorld.vue'
 import PessoasTeste from '../views/PessoasTeste.vue'
+
+import { createRouter, createWebHistory } from 'vue-router'
+import Cadastrar from '../views/Cadastrar.vue'
 
 const routes = [
   {
-    path: '/hello-world',
-    name: 'HelloWorld',
-    component: HelloWorld
+    path: '/cadastrar',
+    name: 'Cadastrar',
+    component: Cadastrar
   },
   {
     path: '/pessoas',
