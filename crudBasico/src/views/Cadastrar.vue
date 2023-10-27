@@ -2,52 +2,58 @@
     <div>
         <div class="input-container">
           <label for="titulo">Titulo: </label>  
-          <input type="text" id="titulo" v-model="titulo" placeholder=" Digite o titulo" >
+          <input type="text" placeholder=" Digite o titulo" >
         </div>
        <br>
 
         <div class="input-container">
           <label for="veículo">  Veículo : </label>  
-          <input type="text" id="veículo" v-model="veículo" placeholder=" Digite o  Veículo ">
+          <input type="text" placeholder=" Digite o Veículo ">
         </div>
         <br>
       
         <div class="input-container">
           <label for="url">  Url da imagem : </label>  
-          <input type="text" id="url" v-model="url" placeholder=" ">
+          <input type="text" placeholder=" Informe a url " >
         </div>
         <br>
 
         <div class="input-container">
           <label for="descricao">  Descrição : </label>  
-          <input type="text" id="descricao" v-model="descricao" placeholder=" ">
+          <input type="text"  placeholder=" Descrição "  >
         </div>
         <br>
         
         <div class="input-container">
           <label for="email"> Email : </label>  
-          <input type="text" id="email" v-model="email" placeholder=" Digite seu e-mail">
+          <input type="text"  placeholder=" Digite seu e-mail">
         </div>
         <br>
 
         <div class="input-container">
           <label for="nome"> Nome : </label>  
-          <input type="text" id="nome" v-model="nome" placeholder=" Digite seu nome">
+          <input type="text" placeholder=" Digite seu nome">
         </div>
         <br>
         
         <div class="input-container">
           <label for="altura"> Altura : </label>  
-          <input type="text" id="email" v-model="email" placeholder=" Digite a altura">
+          <input type="text" placeholder=" Digite a altura">
         </div>
         <br>
     
         <div class="input-container">
           <label for="largura"> Largura : </label>  
-          <input type="text" id="largura" v-model="largura" placeholder=" Digite a largura">
+          <input type="text" placeholder=" Digite a largura">
         </div>
         <br>
+        
+        <div class="botao">
+          <button>Cadastrar</button>
+        </div>
+        
     </div>
+       
 </template>
 
 <script>
@@ -59,9 +65,29 @@ export default {
 
 <style>
 .input-container {
+    text-align: justify;
     margin-top: 10px;
-    flex-direction: column;
-    align-items: center;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700
 
+}
+
+.botao{
+border-radius: 10px!important ;
+display: flex!important ;
+width: 130px!important ;
+height: 28px!important ;
+background-color: #006D77!important  ;
+text-align: center!important ;
+}
+
+input{
+  border-radius: 5px;
+  width: 300px;
+  height: 28px;
 }
 </style>

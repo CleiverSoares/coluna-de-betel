@@ -19,7 +19,6 @@ export default {
   padding: 0;
   margin: 0 auto;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
   
 }
 #app{
