@@ -3,15 +3,17 @@
   <div class="main-container">
     <NavBar/>
     <RouterView />
+    <Footer />
   </div>
 </template>
 <script>
 import NavBar from '../src/components/Nav-Bar.vue'
 import Cadastrar from'./views/Cadastrar.vue'
+import Footer from '../src/components/Footer.vue'
 
 export default {
     name: 'App',
-    components: { NavBar,Cadastrar }
+    components: { NavBar,Cadastrar,Footer }
 }
 </script>
 <style>
