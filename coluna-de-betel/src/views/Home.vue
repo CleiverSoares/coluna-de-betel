@@ -1,11 +1,17 @@
 <template>
   <div class="home-container">
     <div class="div-imagem" v-if="showImage">
+      <!-- Conteúdo da imagem de fundo -->
     </div>
     <div class="div-video" v-else>
       <video controls autoplay muted>
         <source src="../assets/img/video.mp4" type="video/mp4">
       </video>
+      <div class="overlay"></div>
+      <div class="overlay-text">
+        <p>Coluna de Betel
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -19,12 +25,12 @@ export default {
     const showImage = ref(true);
 
     const handleResize = () => {
-      showImage.value = window.innerWidth >= 959;
+      showImage.value = window.innerWidth >= 500;
     };
 
     onMounted(() => {
       window.addEventListener("resize", handleResize);
-      handleResize(); 
+      handleResize();
     });
 
     onUnmounted(() => {
@@ -53,17 +59,37 @@ export default {
   background-size: cover;
   max-width: 100%;
 }
-.div-video{
-  background-color: #b4c7c9;
-height: 100%;
-display: flex;
-justify-content: center;
-padding: 10px;
+
+.div-video {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
+
+.overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.overlay-text {
+  width: 100%;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 24px;
+  font-weight: bold;
+}
+
 video {
   width: 100%;
-  margin-top: 20px;
-  margin-bottom: 20px;
   height: 100%;
-}
-</style>
+}</style>

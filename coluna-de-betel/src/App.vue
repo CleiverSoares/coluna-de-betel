@@ -27,6 +27,7 @@ export default {
 }
 
 #app {
+  height: 100vh!important;
   min-height: calc(100vh - 120px) !important;
   width: 100%;
 
