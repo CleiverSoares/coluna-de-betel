@@ -18,11 +18,11 @@
                     Home
                 </router-link>
 
+                <router-link class="navbar-item" to="/cadastrar">
+                    Escola Dominical
+                </router-link>
 
 
-                <a class="navbar-item">
-                    Documentation
-                </a>
 
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
@@ -47,16 +47,16 @@
                 </div>
             </div>
 
-        </div>
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="buttons">
-                    <a class="button is-primary">
-                        <strong>Sign up</strong>
-                    </a>
-                    <a class="button is-light">
-                        Log in
-                    </a>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary">
+                            <strong>Sign up</strong>
+                        </a>
+                        <a class="button is-light">
+                            Log in
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
