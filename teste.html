@@ -1,0 +1,378 @@
+<style>
+    *,
+    *:before,
+    *:after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .texto-dinamico {
+        color: #fff !important;
+        font-weight: bold;
+        min-height: 100px;
+    }
+
+    .texto-container h1 {
+        color: #fff !important;
+        font-size: 72px;
+        font-weight: bold;
+    }
+
+    .hover-scroll:hover {
+        background: #ffffff30;
+    }
+
+    .hover-scroll {
+        position: absolute !important;
+        bottom: 10% !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+
+    }
+
+
+    .scroll {
+        display: block;
+        font-size: 0.933rem;
+        color: #fff;
+        text-decoration: none;
+
+
+        &::before {
+            display: block;
+            position: absolute;
+            margin-left: 18px;
+            top: 9px;
+            left: 0;
+            width: 24px;
+            height: 40px;
+            border: 2px solid #fff;
+            border-radius: 12px;
+            content: "";
+            z-index: 9999;
+        }
+
+        &::after {
+            z-index: 99999;
+            display: block;
+            position: absolute;
+            margin-left: 18px;
+            top: 18px;
+            left: 11px;
+            width: 2px;
+            height: 8px;
+            background: #fff;
+            border-radius: 1px;
+            content: "";
+            animation-name: scroll;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-delay: 2s;
+        }
+    }
+
+    @keyframes scroll {
+        0% {
+            opacity: 1;
+            height: 8px;
+        }
+
+        20% {
+            opacity: 1;
+            height: 8px;
+        }
+
+        30% {
+            transform: translateY(0);
+            opacity: 1;
+            height: 19px;
+        }
+
+        40% {
+            opacity: 1;
+        }
+
+        80% {
+            transform: translateY(19px);
+            opacity: 0;
+            height: 0;
+        }
+
+        81% {
+            transform: translateY(0);
+            opacity: 0;
+            height: 8px;
+        }
+
+        100% {
+            opacity: 1;
+            height: 8px;
+        }
+    }
+
+    .video-background {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        position: absolute;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+
+    }
+
+    .uk-section {
+        position: relative;
+        z-index: 1;
+    }
+
+
+    .section-palavras {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        position: relative;
+        z-index: 10;
+        width: 90%;
+    }
+
+
+
+    .section-palavras a {
+        position: relative;
+        z-index: 1;
+    }
+
+    .section-palavras p {
+        color: #fff;
+        margin: 0px;
+        text-align: center;
+        width: 50%;
+        margin-bottom: 40px;
+        font-size: 24px;
+    }
+
+    .section-palavras h2 {
+        margin: 0px;
+        width: 100%;
+        margin-bottom: 20px;
+        font-size: 68px;
+    }
+
+    .video-foreground {
+        background: transparent linear-gradient(61deg, #7141F1 0%, #4D6BD8 70%, #3183E2 100%) 0% 0% no-repeat padding-box;
+    }
+
+    .video-foreground,
+    .video-background iframe {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        pointer-events: none !important;
+        mix-blend-mode: multiply !important;
+        border: none;
+        background-size: cover;
+    }
+
+    @media (min-aspect-ratio: 16/9) {
+        .video-foreground {
+            top: -44.9% !important;
+            height: 200% !important;
+        }
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+        .video-foreground {
+            width: 300% !important;
+            left: -100% !important;
+        }
+    }
+
+    @media all and (max-width: 600px) {
+        .section-palavras h2 {
+            font-size: 38px;
+        }
+
+        .vid-info {
+            width: 50% !important;
+            padding: .5rem !important;
+        }
+
+        .texto-container h1 {
+            font-size: 52px !important;
+        }
+
+        .section-palavras p {
+            font-size: 16px;
+        }
+
+        .video-foreground {
+            width: 360% !important;
+            margin-left: -40% !important;
+        }
+
+        .section-palavras h2 {
+            font-size: 28px;
+            padding: 0px 20px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .vid-info h1 {
+            margin-bottom: .2rem !important;
+        }
+    }
+
+    @media all and (max-width: 500px) {
+        .vid-info .acronym {
+            display: none;
+        }
+    }
+
+    .texto-container {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0px;
+    }
+
+    .texto-dinamico::after {
+        content: '';
+        margin-left: 4px;
+        opacity: 1;
+        font-weight: 600;
+        animation: pisca .9s infinite;
+        background-color: #fff;
+        padding: 1px;
+
+    }
+
+    @keyframes blink {
+        50% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes pisca {
+
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+    }
+    body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .fullscreen-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Tente alterar para 'contain' se a qualidade não melhorar */
+        }
+</style>
+<script>
+
+    var iframe = document.getElementById('meuIframe');
+
+
+    window.addEventListener('message', function (event) {
+        if (event.data === 'play') {
+
+            iframe.contentWindow.postMessage('play', '*');
+        }
+    });
+
+
+    // iframe.contentWindow.postMessage('play', '*');
+</script>
+
+<div class="video-background">
+    <div class="video-foreground">
+        <video class="fullscreen-video" autoplay muted loop>
+            <source src="/image-igreja/Vídeo.mp4" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+        </video>
+
+    </div>
+    <div class="section-palavras">
+        <div class="texto-container">
+            <h1>Solução que</h1>
+            <b>
+                <h2 id="textoDinamicoId" class="texto-dinamico"></h2>
+            </b>
+
+        </div>
+        <!-- <div class="botao-compre-agora">
+
+            <a href="https://ecommerce.alterdata.com.br/produto/9b19e8f9-f350-4b1f-83a0-cfdadfb2ff6e" target="_blank"
+                class="uk-button uk-button-default" uk-scroll>COMPRE AGORA</a>
+        </div> -->
+
+    </div>
+    <a class="hover-scroll" href="#primeira-section" uk-scroll name="#primeira-section">
+        <div class="scroll"></div>
+    </a>
+
+</div>
+<script>
+    const textArray = ["ACELERA EMPRESAS ", "FACILITA TRABALHOS", "IMPULSIONA RESULTADOS"];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const textoDinamicoIdElement = document.getElementById('textoDinamicoId');
+
+    function atualizaTexto() {
+        const currentText = textArray[textIndex];
+
+        if (isDeleting) {
+            textoDinamicoIdElement.innerHTML = `${currentText.substring(0, charIndex)}`;
+            charIndex--;
+
+            if (charIndex < 0) {
+                charIndex = 0;
+                isDeleting = false;
+
+                textIndex = (textIndex + 1) % textArray.length;
+                setTimeout(atualizaTexto, 200);
+            } else {
+                setTimeout(atualizaTexto, 80);
+            }
+        } else {
+            textoDinamicoIdElement.innerHTML = `${currentText.substring(0, charIndex)}`;
+            charIndex++;
+
+            if (charIndex > currentText.length) {
+                charIndex = currentText.length;
+                isDeleting = true;
+
+                setTimeout(atualizaTexto, 800);
+            } else {
+                setTimeout(atualizaTexto, 110);
+            }
+        }
+    }
+
+    atualizaTexto();
+</script>

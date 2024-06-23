@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        /* ========== (INICIO) PINTURA DOS ITENS POR PAGINA ========== */
+        .dropdown .background {
+            background: #4ac4cf; /* COR-MUDAR */
+            z-index: 10 !important;
+        }
+    
+        .dropdown-content:after {
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            bottom: -10px;
+            right: 6%;
+            z-index: 0;
+            border-top: 12px solid #4ac4cf; /* COR-MUDAR */
+        }
+    
+        .color-logo-alterdata-whatsapp {
+            fill: #4ac4cf; /* COR-MUDAR */
+        }
+    
+        /* ========== (FIM) PINTURA DOS ITENS POR PAGINA ========== */
+        .barra-contato-v2 {
+            display: none;
+        }
+    
+        .campo-mensagens-flex {
+            display: flex;
+            align-items: center;
+        }
+    
+        .campo-mensagens-flex span {
+            font-size: 12px;
+            opacity: 0;
+            transition: 0.3;
+            color: #707070;
+        }
+    
+        .campo-mensagens-flex img {
+            margin-left: 10px;
+            width: 30px !important;
+            border-radius: 0px !important;
+        }
+    
+        .campo-mensagens-flex svg {
+            fill: #fff !important;
+        }
+    
+        .campo-mensagens-flex:hover span {
+            opacity: 1 !important;
+        }
+    
+        .alinhamento-imagem-perfil {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+    
+        .alinhamento-close-perfil {
+            display: flex;
+            align-items: center;
+        }
+    
+        .superior-dropdown {
+            padding: 10px 20px;
+            border-radius: 25px 25px 0px 0px;
+            margin-bottom: 10px;
+            display: flex;
+        }
+    
+        .superior-dropdown p {
+            margin: 0px !important;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: #fff;
+        }
+    
+        .inferior-dropdown {
+            border-radius: 15px;
+            padding: 5px;
+        }
+    
+        .mensagem-dropdown {
+            padding: 8px;
+            display: flex;
+        }
+    
+        .mensagem-dropdown svg {
+            width: 27px;
+            height: 27px;
+            display: flex;
+            align-items: end;
+            margin-bottom: 7px;
+            border-radius: 30px;
+        }
+    
+        .fechamentos svg {
+            width: 44px !important;
+            padding: 5px;
+            border-radius: 50% !important;
+        }
+    
+        .fechamentos svg:hover {
+            background: #f1f2f3;
+        }
+    
+        .mensagem-dropdown p {
+            padding: 8px 15px !important;
+            border-radius: 25px;
+            margin: 5px;
+            border: 1px solid #707070;
+            color: #707070;
+        }
+    
+        .campo-mensagens-flex .col-3 {
+            padding: 8px 15px;
+            border-radius: 25px;
+            margin: 5px;
+            border: 1px solid #707070;
+            color: #707070;
+        }
+    
+        .mensagem-dropdown .div-imagem-mensagem {
+            display: flex;
+            align-items: flex-end;
+            margin-right: 3px;
+            margin-left: 3px;
+        }
+    
+        .centro-dropdown {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+    
+        .centro-dropdown img {
+            width: 55px;
+            height: 55px;
+            border-radius: 30px;
+        }
+    
+        .centro-dropdown p {
+            font-size: 14px !important;
+            color: #707070;
+        }
+    
+        .estamos-aqui {
+            margin-top: 10px !important;
+        }
+    
+        .flex-align {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+        }
+    
+        .flex-align .uk-button {
+            padding: 8px !important;
+            margin: 8px 5px 5px 5px !important;
+            background: #f1f2f3;
+            line-height: 0px;
+        }
+    
+        .flex-align .aling-texto-whatsapp {
+            margin-right: 10px;
+            font-size: 12px;
+            align-items: center;
+            display: flex;
+            background: #f4f5f5;
+            padding: 8px 15px !important;
+            border-radius: 5px;
+            margin-bottom: 0px !important;
+        }
+    
+        .flex-align .aling-botao-whatsapp {
+            align-items: center;
+            display: flex;
+            cursor: pointer;
+        }
+    
+        .alinhamento-botao-whatsapp hr {
+            margin: 5px;
+        }
+    
+        .alinhamento-botao-whatsapp {
+            position: fixed !important;
+            bottom: 0;
+            margin: 0px 30px 0px 0px;
+        }
+    
+        .dropbtn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
+        }
+    
+    
+    
+        .aling-botao-whatsapp svg {
+            position: relative;
+            z-index: 0;
+        }
+    
+        .dropdown svg:hover #background,
+        .dropdown svg:focus #background {
+            fill: #1f7115;
+        }
+    
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            z-index: 10;
+        }
+    
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 285px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            bottom: 125px !important;
+            right: -5px;
+            animation: slide-up 0.3s;
+        }
+    
+        .hid-box {
+            top: 100%;
+            position: relative;
+            transition: all 0.3s ease-out;
+            height: 100%;
+        }
+    
+        .dropdown-content p {
+            font-size: 14px !important;
+        }
+    
+        .dropdown-content a {
+            color: #fff;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 8px;
+            display: block;
+            font-size: 14px;
+        }
+    
+        .dropdown-content a:hover {
+            background-color: #FFFFFF33;
+        }
+    
+        .hoje {
+            margin-top: 50px !important;
+            margin-bottom: 0px !important;
+        }
+    
+        .superior-dropdown img {
+            width: 32px;
+            height: 32px;
+            border-radius: 30px;
+        }
+    
+        .alinhamento-botao-whatsapp a,
+        .alinhamento-botao-whatsapp p {
+            animation: go-back 1s;
+        }
+    
+    
+    
+        .div-fechar {
+            width: 100vw;
+            height: 100vh;
+            display: none;
+            transition: 0.3s;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+        }
+    
+        .show {
+            display: block;
+        }
+    
+        .msg1 {
+            display: none;
+        }
+    
+        .loading1 {
+            display: none;
+            border-radius: 25px;
+            margin: 5px;
+            border: 1px solid #707070;
+            color: #707070;
+        }
+    
+        .loading1,
+        .loading2 {
+            padding: 12px 18px !important;
+        }
+    
+        .loading2 {
+            display: none;
+            border-radius: 25px;
+            margin: 5px;
+            border: 1px solid #707070;
+            color: #707070;
+        }
+    
+        .msg2 {
+            display: none;
+        }
+    
+        .dot-flashing {
+            position: relative;
+            width: 5px;
+            height: 5px;
+            border-radius: 5px;
+            background-color: #707070;
+            color: #707070;
+            animation: dot-flashing 1s infinite linear alternate;
+            animation-delay: 0.5s;
+            margin-left: 0px;
+    
+        }
+    
+        .dot-flashing::before,
+        .dot-flashing::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 0;
+        }
+    
+        .dot-flashing::before {
+            left: -10px;
+            width: 5px;
+            height: 5px;
+            border-radius: 5px;
+            background-color: #707070;
+            color: #707070;
+            animation: dot-flashing 1s infinite alternate;
+            animation-delay: 0s;
+        }
+    
+        .dot-flashing::after {
+            left: 10px;
+            width: 5px;
+            height: 5px;
+            border-radius: 5px;
+            background-color: #707070;
+            color: #707070;
+            animation: dot-flashing 1s infinite alternate;
+            animation-delay: 1s;
+        }
+    
+        @keyframes dot-flashing {
+            0% {
+                background-color: #707070;
+            }
+    
+            50%,
+            100% {
+                background-color: #d8d7d7;
+            }
+        }
+    
+        @keyframes go-back {
+            0% {
+                transform: translateX(10px);
+            }
+    
+            100% {
+                transform: translateX(0);
+            }
+        }
+    
+        @keyframes slide-up {
+            0% {
+                transform: translateY(100%);
+            }
+    
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <div onclick="fecharModal()" class="div-fechar"></div>
+    <div class="dropdown alinhamento-botao-whatsapp">
+        <div class="flex-align">
+            <div class="aling-botao-whatsapp">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" height="52" viewBox="0 0 176 176" width="52">
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="_09.whatsapp" data-name="09.whatsapp">
+                            <circle onclick="myFunction()" class="dropbtn background-watsapp"  id="background"
+                                cx="88" cy="88" fill="#29a71a" r="88" />
+                            <g id="icon" fill="#fff">
+                                <path onclick="myFunction()" class="dropbtn"
+                                    d="m126.8 49.2a54.57 54.57 0 0 0 -87.42 63.13l-5.79 28.11a2.08 2.08 0 0 0 .33 1.63 2.11 2.11 0 0 0 2.24.87l27.55-6.53a54.56 54.56 0 0 0 63.09-87.21zm-8.59 68.56a42.74 42.74 0 0 1 -49.22 8l-3.84-1.9-16.89 4 .05-.21 3.5-17-1.88-3.71a42.72 42.72 0 0 1 7.86-49.59 42.73 42.73 0 0 1 60.42 0 2.28 2.28 0 0 0 .22.22 42.72 42.72 0 0 1 -.22 60.19z" />
+                                <path onclick="myFunction()" class="dropbtn"
+                                    d="m116.71 105.29c-2.07 3.26-5.34 7.25-9.45 8.24-7.2 1.74-18.25.06-32-12.76l-.17-.15c-12.09-11.21-15.23-20.54-14.47-27.94.42-4.2 3.92-8 6.87-10.48a3.93 3.93 0 0 1 6.15 1.41l4.45 10a3.91 3.91 0 0 1 -.49 4l-2.25 2.92a3.87 3.87 0 0 0 -.35 4.32c1.26 2.21 4.28 5.46 7.63 8.47 3.76 3.4 7.93 6.51 10.57 7.57a3.82 3.82 0 0 0 4.19-.88l2.61-2.63a4 4 0 0 1 3.9-1l10.57 3a4 4 0 0 1 2.24 5.91z" />
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+                <p onclick="myFunction()" class="aling-texto-whatsapp">Fale conosco</p>
+                
+            </div>
+            <div>
+            </div>
+            <a id="target" class="uk-button" href="" uk-scroll=""><span uk-icon="icon: chevron-up"></span></a>
+        </div>
+        
+        <div id="myDropdown" class="dropdown-content">
+            <div class="superior-dropdown">
+                <div class="alinhamento-imagem-perfil">
+    
+                </div>
+                <div class="alinhamento-close-perfil">
+                    <p class="fechamentos" onclick="fecharModal()">
+                        <svg xmlns="http://www.w3.org/2000/svg" style="fill: #707070;" height="24" viewBox="0 -960 960 960"
+                            width="24">
+                            <path d="M240-380v-80h480v80H240Z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" style="fill: #707070;" height="24" viewBox="0 -960 960 960"
+                            width="24">
+                            <path
+                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                        </svg>
+    
+                    </p>
+                </div>
+            </div>
+            <div class="centro-dropdown">
+            <img src="./images/novas-img/logo-doar.png" alt="" srcset="">
+                <p class="estamos-aqui">Estamos aqui para te ajudar!</p>
+                <p class="hoje">Hoje</p>
+            </div>
+            <div class="mensagem-dropdown">
+                <!-- <div class="div-imagem-mensagem">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="39.995" height="40" viewBox="0 0 39.995 40">
+                        <g id="CTA" transform="translate(-460.592 -504.551)">
+                            <rect class="color-logo-alterdata-whatsapp" id="Rectangle_23" data-name="Rectangle 23"
+                                width="39.995" height="40" rx="19.998" transform="translate(460.592 504.551)" />
+                            <path id="Path_2" data-name="Path 2"
+                                d="M8.2,11.028l-3.13,3.126V7.9ZM3.189,20.507a1.7,1.7,0,0,1-1.7-1.7V3.215a1.7,1.7,0,0,1,2.9-1.2l6.529,6.532.071.071.071-.071,2.988-2.988.068-.071-.068-.071-2.994-3a.545.545,0,0,1,.387-.93l8.486.02a.58.58,0,0,1,.577.578v8.444a.55.55,0,0,1-.54.56H19.94a.518.518,0,0,1-.389-.165L16.586,7.961l-.071-.071-3.127,3.127.071.071,3.251,3.245,3.307,3.3a1.652,1.652,0,0,1,.485,1.173v.043a1.66,1.66,0,0,1-1.659,1.657h-.079a1.66,1.66,0,0,1-1.173-.485l-6.533-6.534-.071-.068-.071.068L4.4,20.01a1.685,1.685,0,0,1-1.207.5m15.306-8.525a2.023,2.023,0,0,0,1.446.6,2.053,2.053,0,0,0,2.053-2.051V2.09A2.073,2.073,0,0,0,19.929.02L11.443,0h0A2.039,2.039,0,0,0,10,3.476l2.014,2.011L10.989,6.509,5.441.963A3.187,3.187,0,0,0,0,3.215V18.808a3.193,3.193,0,0,0,5.45,2.258l5.539-5.539,5.55,5.55A3.141,3.141,0,0,0,18.767,22h.079A3.151,3.151,0,0,0,22,18.851v-.043a3.146,3.146,0,0,0-.925-2.229L15.5,11.017,16.516,10Z"
+                                transform="translate(469.592 513.551)" fill="#fff" />
+                        </g>
+                    </svg>
+                </div> -->
+                <div>
+                    <div class="campo-mensagens-flex">
+                        <div id="dot1"  class="col-3 loading1">
+                            <div class="snippet" data-title="dot-flashing">
+                                <div class="stage">
+                                    <div class="dot-flashing"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p id="dotMsg1" class="msg1">Olá!</p>
+                        <span class="hora-mensagem"></span>
+                    </div>
+                    <div class="campo-mensagens-flex">
+                        <div id="dot2"  class="col-3 loading2">
+                            <div class="snippet" data-title="dot-flashing">
+                                <div class="stage">
+                                    <div class="dot-flashing"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p id="dotMsg2" class="msg2">Quer conversar por onde?</p>
+                        <span class="hora-mensagem"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="inferior-dropdown background">
+                <a
+                    href="https://w.app/RZCpVG" target="_blank" rel="noopener">Conversar por WhatsApp</a>
+                <!-- <hr />
+                <div uk-lightbox="">
+                    <a href="https://ctc.alterdata.com.br/clicktocall/clicktocall_form_v3.php?_gl=1*1i2ipsu*_ga*MTgyMTEyOTgyNS4xNzA0OTA4ODE5*_ga_H6NJ6SD0BX*MTcwNzM5NjkxOC4zNS4xLjE3MDc0MDM5NDAuMzYuMC4xNTI5OTc1Mjcw"
+                        data-attrs="width: 600;" data-type="iframe">Ligamos para você</a>
+                </div> -->
+                <hr />
+                <a href="tel:999999999">Ligue
+                    para nós: 99999999999</a>
+            </div>
+        </div>
+    </div>
+    <script>
+    
+        function simulateMsg1() {
+            resetSimulate();
+    
+            let dot1 = document.getElementById("dot1");
+            let dotMsg1 = document.getElementById("dotMsg1");
+    
+            setTimeout(() => {
+                dot1.style.display = "block";
+    
+                setTimeout(() => {
+                    dot1.style.display = "none";
+                    dotMsg1.style.display = "block";
+    
+                    simulateMsg2();
+                }, 800);
+            }, 800);
+        }
+    
+        function simulateMsg2() {
+            let dot2 = document.getElementById("dot2");
+            let dotMsg2 = document.getElementById("dotMsg2");
+    
+            dot2.style.display = "block";
+    
+            setTimeout(() => {
+                dot2.style.display = "none";
+                dotMsg2.style.display = "block";
+            }, 800);
+        }
+    
+        function resetSimulate() {
+            let dot1 = document.getElementById("dot1");
+            let dotMsg1 = document.getElementById("dotMsg1");
+    
+            let dot2 = document.getElementById("dot2");
+            let dotMsg2 = document.getElementById("dotMsg2");
+    
+            dot1.style.display = "none";
+            dotMsg1.style.display = "none";
+    
+            dot2.style.display = "none";
+            dotMsg2.style.display = "none";
+        }
+    
+    
+        function myFunction() {
+            simulateMsg1()
+            document.getElementById("myDropdown").classList.toggle("show");
+            document.getElementById("myDropdown").style.zIndex = 1000;
+            mostrarDiv();
+        }
+    
+        function mostrarDiv() {
+            var mostrarDiv = document.getElementsByClassName("div-fechar");
+            if (mostrarDiv[0].style.display === "flex") {
+                fecharDiv();
+            } else {
+                for (var x = 0; x < mostrarDiv.length; x++)
+                    mostrarDiv[x].style.display = "flex";
+            }
+        }
+    
+        function fecharDiv() {
+            var fecharDiv = document.getElementsByClassName("div-fechar");
+            for (var x = 0; x < fecharDiv.length; x++)
+                fecharDiv[x].style.display = "none";
+        }
+    
+        function fecharModal() {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains("show")) {
+                    openDropdown.classList.remove("show");
+                }
+            }
+            mostrarDiv();
+        }
+        function atualizarDataHora() {
+            var hora = new Date();
+            var elementsHora = document.getElementsByClassName("hora-mensagem");
+            for (var i = 0; i < elementsHora.length; i++) {
+                elementsHora[i].innerHTML = hora.getHours() + ":" + hora.getUTCMinutes();
+            }
+        }
+        setInterval(atualizarDataHora, 1000);
+    </script>
+</body>
+</html>

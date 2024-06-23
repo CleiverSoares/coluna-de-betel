@@ -1,0 +1,604 @@
+/* #popup {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 9999;
+}
+body{
+  overflow: hidden;
+}
+#popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 10;
+  flex-direction: column;
+  display: flex;
+}
+#popup p {
+  color: #000;
+}
+#popup a {
+ margin-top: 10px;
+}
+#popup img {
+  max-width: 100%;
+  margin-top: 20px;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #000;
+  font-size: 20px;
+}
+
+
+/* Estilos para o modal */
+/* .meu-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}  */
+.meu-modal{
+  display: none;
+}
+.rd-navbar-classic.rd-navbar-static .rd-nav-item .rd-nav-link{
+  color: #fff;
+}
+.rd-navbar-classic.rd-navbar-static .rd-nav-item.active .rd-nav-link{
+  color: #fff;
+
+}
+
+.rd-navbar-main-outer{
+  background-color: #1c2748 !important;
+  color: #fff;
+}
+.sessao-23-anos {
+  margin-top: 80px;
+  margin-bottom: -10px;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.meus-textos-banner,
+.meus-textos-banner h2 {
+  color: #fff;
+}
+.thumbnail-classic-figure img {
+  object-fit: cover !important;
+}
+.video-container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.video-container iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+.section-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+.rd-navbar-fixed .rd-navbar-panel {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1030;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 4px;
+}
+#fullScreenVideo {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.hide-after-btn {
+  display: none;
+}
+
+.hide-after-btn.hide {
+  display: block;
+}
+
+.thumbnail-classic-figure img {
+  width: 420px !important;
+  height: 350px !important;
+}
+.contador-idade {
+  margin-right: 80px;
+  margin-left: -120px;
+}
+.imagem-sandrinho {
+  border-radius: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.imagem-link:hover .imagem-sandrinho {
+  transform: scale(1.1);
+  z-index: 999;
+}
+
+@media (max-width: 500px) {
+  .meu-mobile {
+    display: block !important ;
+  }
+  .meu-desktop {
+    display: none;
+  }
+  .aling-texto-whatsapp {
+    display: none !important;
+  }
+  .nav-video-figure img {
+    width: 300px;
+    height: 150px;
+  }
+}
+.fl-bigmug-line-share27,
+.meu-mobile {
+  display: none;
+}
+
+@media (max-width: 959px) {
+  html.rd-navbar-fixed-linked .page-header {
+    height: 0px !important;
+  }
+
+  .fl-bigmug-line-share27 {
+    display: block;
+  }
+  .contador-idade {
+    margin-right: 0px;
+    margin-left: -0px;
+  }
+}
+@media (max-width: 1195px) {
+  .rd-navbar-fixed .rd-navbar-panel {
+    justify-content: space-between;
+    padding: 20px;
+  }
+  .rd-navbar-fixed .logo-principal img {
+    max-width: 170px;
+    max-height: 58px;
+    width: 80%;
+    height: auto;
+  }
+}
+
+/* ========== (INICIO) PINTURA DOS ITENS POR PAGINA ========== */
+.dropdown .background {
+  background: #4ac4cf; /* COR-MUDAR */
+  z-index: 10 !important;
+}
+
+.dropdown-content:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  bottom: -10px;
+  left: 6%;
+  z-index: 0;
+  border-top: 12px solid #4ac4cf; /* COR-MUDAR */
+}
+
+.color-logo-alterdata-whatsapp {
+  fill: #4ac4cf; /* COR-MUDAR */
+}
+
+/* ========== (FIM) PINTURA DOS ITENS POR PAGINA ========== */
+.barra-contato-v2 {
+  display: none;
+}
+
+.campo-mensagens-flex {
+  display: flex;
+  align-items: center;
+}
+
+.campo-mensagens-flex span {
+  font-size: 12px;
+  opacity: 0;
+  transition: 0.3;
+  color: #707070;
+}
+
+.campo-mensagens-flex img {
+  margin-left: 10px;
+  width: 30px !important;
+  border-radius: 0px !important;
+}
+
+.campo-mensagens-flex svg {
+  fill: #fff !important;
+}
+
+.campo-mensagens-flex:hover span {
+  opacity: 1 !important;
+}
+
+.alinhamento-imagem-perfil {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.alinhamento-close-perfil {
+  display: flex;
+  align-items: center;
+}
+
+.superior-dropdown {
+  padding: 10px 20px;
+  border-radius: 25px 25px 0px 0px;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.superior-dropdown p {
+  margin: 0px !important;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #fff;
+}
+
+.inferior-dropdown {
+  border-radius: 15px;
+  padding: 5px;
+}
+
+.mensagem-dropdown {
+  padding: 8px;
+  display: flex;
+}
+
+.mensagem-dropdown svg {
+  width: 27px;
+  height: 27px;
+  display: flex;
+  align-items: end;
+  margin-bottom: 7px;
+  border-radius: 30px;
+}
+
+.fechamentos svg {
+  width: 44px !important;
+  padding: 5px;
+  border-radius: 50% !important;
+}
+
+.fechamentos svg:hover {
+  background: #f1f2f3;
+}
+
+.mensagem-dropdown p {
+  padding: 8px 15px !important;
+  border-radius: 25px;
+  margin: 5px;
+  border: 1px solid #707070;
+  color: #707070;
+}
+
+.campo-mensagens-flex .col-3 {
+  padding: 8px 15px;
+  border-radius: 25px;
+  margin: 5px;
+  border: 1px solid #707070;
+  color: #707070;
+}
+
+.mensagem-dropdown .div-imagem-mensagem {
+  display: flex;
+  align-items: flex-end;
+  margin-right: 3px;
+  margin-left: 3px;
+}
+
+.centro-dropdown {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.centro-dropdown img {
+  width: 55px;
+  height: 55px;
+  border-radius: 30px;
+}
+
+.centro-dropdown p {
+  font-size: 14px !important;
+  color: #707070;
+}
+
+.estamos-aqui {
+  margin-top: 10px !important;
+}
+
+.flex-align {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.flex-align .uk-button {
+  padding: 8px !important;
+  margin: 8px 5px 5px 5px !important;
+  background: #f1f2f3;
+  line-height: 0px;
+}
+
+.flex-align .aling-texto-whatsapp {
+  margin-left: 10px;
+  font-size: 12px;
+  align-items: center;
+  display: flex;
+  background: #f4f5f5;
+  padding: 8px 15px !important;
+  border-radius: 5px;
+  margin-bottom: 10px !important;
+}
+
+.flex-align .aling-botao-whatsapp {
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+}
+
+.alinhamento-botao-whatsapp hr {
+  margin: 5px;
+}
+
+.alinhamento-botao-whatsapp {
+  position: fixed !important;
+  bottom: 0;
+  margin: 0px 30px 0px 0px;
+  left: 1%;
+}
+
+.dropbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+
+.aling-botao-whatsapp svg {
+  position: relative;
+  z-index: 0;
+}
+
+.dropdown svg:hover #background,
+.dropdown svg:focus #background {
+  fill: #1f7115;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 285px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  bottom: 75px !important;
+  animation: slide-up 0.3s;
+}
+
+.hid-box {
+  top: 100%;
+  position: relative;
+  transition: all 0.3s ease-out;
+  height: 100%;
+}
+
+.dropdown-content p {
+  font-size: 14px !important;
+}
+
+.dropdown-content a {
+  color: #fff;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 8px;
+  display: block;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background-color: #ffffff33;
+}
+
+.hoje {
+  margin-top: 50px !important;
+  margin-bottom: 0px !important;
+}
+
+.superior-dropdown img {
+  width: 32px;
+  height: 32px;
+  border-radius: 30px;
+}
+
+.alinhamento-botao-whatsapp a,
+.alinhamento-botao-whatsapp p {
+  animation: go-back 1s;
+}
+
+.div-fechar {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  transition: 0.3s;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.show {
+  display: block;
+}
+
+.msg1 {
+  display: none;
+}
+
+.loading1 {
+  display: none;
+  border-radius: 25px;
+  margin: 5px;
+  border: 1px solid #707070;
+  color: #707070;
+}
+
+.loading1,
+.loading2 {
+  padding: 12px 18px !important;
+}
+
+.loading2 {
+  display: none;
+  border-radius: 25px;
+  margin: 5px;
+  border: 1px solid #707070;
+  color: #707070;
+}
+
+.msg2 {
+  display: none;
+}
+
+.dot-flashing {
+  position: relative;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #707070;
+  color: #707070;
+  animation: dot-flashing 1s infinite linear alternate;
+  animation-delay: 0.5s;
+  margin-left: 0px;
+}
+
+.dot-flashing::before,
+.dot-flashing::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.dot-flashing::before {
+  left: -10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #707070;
+  color: #707070;
+  animation: dot-flashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+
+.dot-flashing::after {
+  left: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #707070;
+  color: #707070;
+  animation: dot-flashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes dot-flashing {
+  0% {
+    background-color: #707070;
+  }
+
+  50%,
+  100% {
+    background-color: #d8d7d7;
+  }
+}
+
+@keyframes go-back {
+  0% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
